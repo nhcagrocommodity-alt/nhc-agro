@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHC Agro - Freshness Guaranteed</title>
+	<link rel="icon" type="image/png" href="image/logo nhc.jpg"><link href="style.css" rel="stylesheet"></head>
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        agroGreen: '#166534',
+                        agroLightGreen: '#22c55e',
+                        agroYellow: '#eab308',
+                        agroDarkYellow: '#ca8a04',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Slideshow Animation */
+        .slide {
+			padding
+            display: flex;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+            opacity: 1;
+        }
+        /*nav bar */
+       *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:arial,sans-serif;
+        }
+        .site-header{
+            background-color: #078159;
+            border-bottom:2px solid #e0e0e0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0,0.05);
+        }
+        .navbar{
+            display:flex;
+            justify-content:space-betweer;
+            align-items:center
+            padding : 10px 20px;
+            max: width 1400px;
+            margin:0:auto;
+        }
+
+        /*left &right small logo and text style*/
+        .nav-left,.nav-right{
+            display:flex;
+            align-items:center;
+            gap: 10px;
+            font: size 13px;
+            color:#333;
+            font-weight:bold;
+        }
+        .logo-small{
+            height:30px;
+            object-fit: contain;
+        }
+        /* center section styleing*/
+        .nav-center{
+            display: flex;
+            align-items: center;
+            gap:40px;
+        }
+        .company-brand{
+            display:flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color:#2c3e50;
+            font-weight: bold;
+            font: size 18px;
+        }
+        .logo-main{
+            height: 45px;
+            object-fit:contain;
+        }
+        .nav-link{
+            display: flex;
+            list-style: none;
+            gap: 150px;
+        }
+        /*responsive design for smaller screens*/
+        @media(max-width:991px){
+            .navbar{
+                flex-direction:column;
+                gap: 100px;
+                padding: 15px;
+            }
+            .nav-center{
+                flex-direction: :column;
+                gap: 100px;
+                align-items: center;
+            }
+        }
+        /*booking form style*/
+        :root {
+            --primary-color: #1b4d3e;
+            --primary-hover: #14382c;
+            --accent-gold: #c69214;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --border-color: green;
+            --border-radius: 6px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            border-top: 5px solid var(--primary-color);
+        }
+
+        /* Header Style */
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #14382c;
+            padding-bottom: 20px;
+        }
+
+        .form-header h1 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .form-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Form Layout Grid */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .section-box {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        /* Form Controls */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--text-main);
+        }
+
+        label .required {
+            color: #d9534f;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            background-color: #fff;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(27, 77, 62, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .form-row-3 {
+            display: grid;
+            grid-template-columns: 2fr 2fr 1fr;
+            gap: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .form-row, .form-row-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Checkbox styling */
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: var(--primary-color);
+        }
+
+        .checkbox-group label {
+            margin-bottom: 0;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        /* Table Style for Products */
+        .product-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+
+        .product-table th, .product-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.9rem;
+        }
+
+        .product-table th {
+            background-color: #f1f5f9;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .add-product-btn {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.9rem;
+            padding: 5px 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .add-product-btn:hover {
+            text-decoration: underline;
+        }
+
+        /* Submit Button */
+        .submit-container {
+            grid-column: 1 / -1;
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .btn-submit {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background-color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .form-footer-note {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid #e9ecef;
+            padding-top: 15px;
+        }
+		
+    
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-gray-800">
+    
+    <!-- ============================= -->
+<!-- RESPONSIVE NAVBAR -->
+<!-- ============================= -->
+<body style="margin:0; padding:0;">
+<nav class="bg-agroGreen text-white fixed top-0 left-0 w-full z-50 shadow-lg">
+
+    <div class="w-full px-3 sm:px-5">
+
+        <div class="flex items-center justify-between min-h-20">
+
+            <!-- ============================= -->
+            <!-- LEFT: GSTIN -->
+            <!-- ============================= -->
+
+            <div class="hidden lg:flex items-center gap-3 flex-shrink-0">
+
+                <img
+                    src="image\gst logo .jpeg"
+                    alt="GST Logo"
+                    class="h-12 w-12 object-contain rounded-lg bg-white p-1">
+
+                <div class="leading-tight">
+
+                    <span class="block text-sm font-bold text-white">
+                        GSTIN/UIN
+                    </span>
+
+                    <span class="block text-base font-bold text-amber-400 tracking-wide">
+                        08CMAPT0565K1ZQ
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- CENTER: LOGO -->
+            <!-- ============================= -->
+
+            <div class="flex items-center gap-2 sm:gap-3">
+
+                <img
+                    src="image\logo nhc.jpg"
+                    alt="NHC Agro Logo"
+                    class="h-12 w-12 sm:h-14 sm:w-14 object-contain rounded-xl shadow-md border-2 border-yellow-400 bg-white p-0.5">
+
+                <div class="leading-none">
+
+                    <span class="block text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+                        NHC AGRO
+                    </span>
+
+                    <span class="block text-xs sm:text-sm font-bold text-amber-400 tracking-[0.25em] uppercase mt-1">
+                        JODHPUR
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- DESKTOP MENU -->
+            <!-- ============================= -->
+
+            <div class="hidden xl:flex items-center gap-5 text-sm font-semibold whitespace-nowrap">
+
+                <a href="index.html"
+                   class="hover:text-agroYellow transition">
+                    Home
+                </a>
+
+                <a href="daily price.html"
+                   class="hover:text-agroYellow transition">
+                    Daily Price
+                </a>
+
+                <a href="#booking"
+                   class="hover:text-agroYellow transition">
+                    Booking
+                </a>
+
+                <a href="TRANSPORT.html"
+                   class="hover:text-agroYellow transition">
+                    Transport
+                </a>
+
+                <a href="https://wa.me/917300083578"
+                   target="_blank"
+                   class="hover:text-agroYellow transition">
+                    WhatsApp
+                </a>
+
+                <a href="BRANCH.html"
+                   class="hover:text-agroYellow transition">
+                    Branches
+                </a>
+
+                <a href="#catalogues"
+                   class="hover:text-agroYellow transition">
+                    Catalogues
+                </a>
+
+                <a href="#complaint"
+                   class="hover:text-agroYellow transition">
+                    Complaint Desk
+                </a>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- RIGHT: FSSAI -->
+            <!-- ============================= -->
+
+            <div class="hidden lg:flex items-center gap-3 flex-shrink-0">
+
+                <div class="text-right leading-tight">
+
+                    <span class="block text-sm font-bold text-white">
+                        FSSAI No.
+                    </span>
+
+                    <span class="block text-base font-bold text-amber-400 tracking-wide">
+                        12225999000461
+                    </span>
+
+                </div>
+
+                <img
+                    src="image\FSSAI LOGO"
+                    alt="FSSAI Logo"
+                    class="h-12 w-12 object-contain rounded-lg bg-white p-1">
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- MOBILE 3-LINE MENU BUTTON -->
+            <!-- ============================= -->
+
+            <button
+                id="mobileMenuButton"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                class="xl:hidden flex flex-col justify-center items-center
+                       w-11 h-11 rounded-lg
+                       border border-white/30
+                       hover:bg-green-800
+                       transition">
+
+                <span
+                    id="menuLine1"
+                    class="block w-6 h-0.5 bg-white mb-1.5 transition-all duration-300">
+                </span>
+
+                <span
+                    id="menuLine2"
+                    class="block w-6 h-0.5 bg-white mb-1.5 transition-all duration-300">
+                </span>
+
+                <span
+                    id="menuLine3"
+                    class="block w-6 h-0.5 bg-white transition-all duration-300">
+                </span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- MOBILE MENU -->
+    <!-- ============================= -->
+
+    <div
+        id="mobileMenu"
+        class="hidden xl:hidden bg-agroGreen border-t border-green-700 shadow-xl">
+
+        <div class="px-5 py-4 space-y-1">
+
+
+            <!-- HOME -->
+            <a
+                href="index.html"
+                class="mobile-menu-link">
+                <i class="fa-solid fa-house w-6 text-agroYellow"></i>
+                Home
+            </a>
+
+
+            <!-- DAILY PRICE -->
+            <a
+                href="daily price.html"
+                class="mobile-menu-link">
+                <i class="fa-solid fa-chart-line w-6 text-agroYellow"></i>
+                Daily Price
+            </a>
+
+
+            <!-- BOOKING -->
+            <a
+                href="#booking"
+                class="mobile-menu-link">
+                <i class="fa-solid fa-box w-6 text-agroYellow"></i>
+                Booking
+            </a>
+
+
+            <!-- TRANSPORT -->
+            <a
+                href="TRANSPORT.html"
+                class="mobile-menu-link">
+                <i class="fa-solid fa-truck-fast w-6 text-agroYellow"></i>
+                Transport
+            </a>
+
+
+            <!-- WHATSAPP -->
+            <a
+                href="https://wa.me/917300083578"
+                target="_blank"
+                class="mobile-menu-link">
+
+                <i class="fa-brands fa-whatsapp w-6 text-green-400"></i>
+                WhatsApp
+
+            </a>
+
+
+            <!-- BRANCHES -->
+            <a
+                href="BRANCH.html"
+                class="mobile-menu-link">
+                <i class="fa-solid fa-location-dot w-6 text-agroYellow"></i>
+                Branches
+            </a>
+
+
+            <!-- CATALOGUES -->
+            <a
+                href="#catalogues"
+                class="mobile-menu-link">
+                <i class="fa-solid fa-book-open w-6 text-agroYellow"></i>
+                Catalogues
+            </a>
+
+
+            <!-- COMPLAINT -->
+            <a
+                href="#complaint"
+                class="mobile-menu-link">
+                <i class="fa-solid fa-comment-dots w-6 text-agroYellow"></i>
+                Complaint Desk
+            </a>
+
+
+            <!-- CONTACT -->
+            <a
+                href="#contact"
+                class="mobile-menu-link">
+                <i class="fa-solid fa-phone w-6 text-agroYellow"></i>
+                Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- ============================= -->
+<!-- MOBILE MENU CSS -->
+<!-- ============================= -->
+
+<style>
+
+    .mobile-menu-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        padding: 13px 10px;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+    }
+
+    .mobile-menu-link:hover {
+        background-color: #14532d;
+        color: #eab308;
+    }
+
+    .mobile-menu-link:active {
+        background-color: #14532d;
+    }
+
+</style>
+
+
+<!-- ============================= -->
+<!-- MOBILE MENU JAVASCRIPT -->
+<!-- ============================= -->
+
+<script>
+
+    const mobileMenuButton =
+        document.getElementById("mobileMenuButton");
+
+    const mobileMenu =
+        document.getElementById("mobileMenu");
+
+    const menuLine1 =
+        document.getElementById("menuLine1");
+
+    const menuLine2 =
+        document.getElementById("menuLine2");
+
+    const menuLine3 =
+        document.getElementById("menuLine3");
+
+
+    mobileMenuButton.addEventListener("click", function () {
+
+        const isOpen =
+            !mobileMenu.classList.contains("hidden");
+
+
+        if (isOpen) {
+
+            // CLOSE MENU
+
+            mobileMenu.classList.add("hidden");
+
+            mobileMenuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            // Restore hamburger
+
+            menuLine1.classList.remove(
+                "rotate-45",
+                "translate-y-2"
+            );
+
+            menuLine2.classList.remove(
+                "opacity-0"
+            );
+
+            menuLine3.classList.remove(
+                "-rotate-45",
+                "-translate-y-2"
+            );
+
+        } else {
+
+            // OPEN MENU
+
+            mobileMenu.classList.remove("hidden");
+
+            mobileMenuButton.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+            // Turn hamburger into X
+
+            menuLine1.classList.add(
+                "rotate-45",
+                "translate-y-2"
+            );
+
+            menuLine2.classList.add(
+                "opacity-0"
+            );
+
+            menuLine3.classList.add(
+                "-rotate-45",
+                "-translate-y-2"
+            );
+
+        }
+
+    });
+
+
+    // Close menu after clicking a link
+
+    document.querySelectorAll(".mobile-menu-link")
+        .forEach(function(link) {
+
+            link.addEventListener("click", function() {
+
+                mobileMenu.classList.add("hidden");
+
+                mobileMenuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuLine1.classList.remove(
+                    "rotate-45",
+                    "translate-y-2"
+                );
+
+                menuLine2.classList.remove(
+                    "opacity-0"
+                );
+
+                menuLine3.classList.remove(
+                    "-rotate-45",
+                    "-translate-y-2"
+                );
+
+            });
+
+        });
+
+</script>
+</nav>
+
+</body>
+
+            
+    <!-- 2. HOME / SLIDESHOW HERO SECTION -->
+    <section id="home" class="relative h-screen pt-20 overflow-hidden">
+        <!-- Slideshow Container -->
+        <div class="absolute inset-0 w-full h-full">
+            <!-- Slide 1 -->
+            <div class="slide active absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0,0,0,0.5)), url('IMAGE\ 1.png');">
+                <div class="flex items-center justify-center h-full text-center px-4">
+                    <div class="text-white max-w-2xl" data-aos="zoom-in">
+                        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 text-agroYellow">Welcome to NHC AGRO</h1>
+                        <p class="text-lg md:text-xl mb-6">supplier of spices & pulses</p>
+                        <a href="#booking" class="bg-agroYellow text-agroGreen px-8 py-3 rounded-full font-bold text-lg hover:bg-agroDarkYellow hover:text-white transition shadow-lg">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('jeera.png');">
+                <div class="flex items-center justify-center h-full text-center px-4">
+                    <div class="text-white max-w-2xl">
+                        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 text-agroYellow">Fresh Produce Daily</h1>
+                        <p class="text-lg md:text-xl mb-6">Check live market prices and transparent trading instantly.</p>
+                        <a href="daily price.html" class="bg-agroGreen border-2 border-agroYellow text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-agroYellow hover:text-agroGreen transition shadow-lg">View Prices</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. DAILY PRICE SECTION -->
+    <section id="daily-price" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-agroGreen">Our Presence & Impact</h2>
+                <p class="text-gray-600 mt-2">Empowering agriculture with nationwide reach, trust, and support.</p>
+                <div class="w-24 h-1 bg-agroYellow mx-auto mt-3"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-slate-100 p-6 rounded-xl shadow border-t-4 border-agroGreen hover:shadow-lg transition">
+                    <h3 class="text-xl font-bold text-agroGreen mb-2">Pan-India Presence</h3>
+                    <p class="text-2xl font-black text-agroDarkYellow">28 <span class="text-sm font-normal text-gray-500">+</span></p>
+                    <p class="text-green-600 text-sm mt-2"><i class="fa-solid fa-arrow-up"></i> States & Union Territories Covered</p>
+                </div>
+                <div class="bg-slate-100 p-6 rounded-xl shadow border-t-4 border-agroYellow hover:shadow-lg transition">
+                    <h3 class="text-xl font-bold text-agroGreen mb-2">Farmer Support</h3>
+                    <p class="text-2xl font-black text-agroDarkYellow">5,500 <span class="text-sm font-normal text-gray-500">+</span></p>
+                    <p class="text-green-600 text-sm mt-2"><i class="fa-solid fa-arrow-up"></i>Farmer Indirect Support & Welfare Initiatives</p>
+                </div>
+                <div class="bg-slate-100 p-6 rounded-xl shadow border-t-4 border-agroGreen hover:shadow-lg transition">
+                    <h3 class="text-xl font-bold text-agroGreen mb-2">Nationwide Network</h3>
+                    <p class="text-2xl font-black text-agroDarkYellow">18 <span class="text-sm font-normal text-gray-500">+</span></p>
+                    <p class="text-red-500 text-sm mt-2"><i class="fa-solid fa-arrow-down"></i><a href="BRANCH.html"> Branches Across India</a></p>
+                   
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- 5. CATALOGUES SECTION -->
+    <section id="catalogues" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-agroGreen">Our Catalogues</h2>
+                <p class="text-gray-600 mt-2">Explore our categorized product segments.</p>
+                <div class="w-24 h-1 bg-agroYellow mx-auto mt-3"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="bg-slate-100 rounded-xl overflow-hidden shadow hover:shadow-xl transition">
+                    <img src="image\NHC catalogue (1) (1)-1.jpg" alt="Grains" class="w-100 h-100 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-agroGreen mb-2">Pulses & Food Grains</h3>
+                        <p class="text-gray-600 text-sm">Premium quality pulses, lentils, and food grains sourced directly from trusted farms..</p>
+                    </div>
+                </div>
+                <div class="bg-slate-100 rounded-xl overflow-hidden shadow hover:shadow-xl transition">
+                    <img src="image\NHC catalogue (1) (1)-2.jpg" alt="Seeds" class="w-100 h-100 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-agroGreen mb-2">Pure Spices & Condiments</h3>
+                        <p class="text-gray-600 text-sm">Wide range of hygienically processed, naturally sourced, and freshly ground quality spices..</p>
+                    </div>
+                </div>
+                <div class="bg-slate-100 rounded-xl overflow-hidden shadow hover:shadow-xl transition">
+                    <img src="image\NHC catalogue (1) (1)-3.jpg" alt="Fertilizers" class="w-100 h-100 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-agroGreen mb-2">Whole Spices & Seeds</h3>
+                        <p class="text-gray-600 text-sm">Best choice for purity and quality, including a wide variety of lentils, beans, and seeds.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- 7. BOOKING SECTION -->
+     <section id="booking" class="py-20 bg-white">
+    <div class="container">
+
+        <!-- Header -->
+        <div class="form-header">
+            <h1>📦 CONTACT US</h1>
+        </div>
+
+        <form action="https://formspree.io/f/xkjwvnoy" method="POST">
+
+            <div class="form-flex">
+
+                <!-- Left Column: Buyer Information & Shipping -->
+                <div>
+
+                    <!-- Buyer Information -->
+                    <div class="section-box">
+                        <div class="section-title">Buyer Information</div>
+
+                        <div class="form-group">
+                            <label>
+                                Full Name <span class="required">*</span>
+                            </label>
+
+                            <input 
+                                type="text"
+                                name="Full Name"
+                                placeholder="Enter your full name"
+                                required>
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+                                <label>Company Name</label>
+
+                                <input 
+                                    type="text"
+                                    name="Company Name"
+                                    placeholder="Enter company name">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>
+                                    Mobile Number <span class="required">*</span>
+                                </label>
+
+                                <input 
+                                    type="tel"
+                                    name="Mobile Number"
+                                    placeholder="10-digit mobile number"
+                                    required>
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+                                <label>Email ID</label>
+
+                                <input 
+                                    type="email"
+                                    name="Email"
+                                    placeholder="Enter email address">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>
+                                    GST Number
+                                </label>
+
+                                <input 
+                                    type="text"
+                                    name="GST Number"
+                                    placeholder="Enter GST number"
+                                    required>
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>
+                                Billing Address
+                            </label>
+
+                            <textarea 
+                                rows="2"
+                                name="Billing Address"
+                                placeholder="Enter billing address"
+                                required></textarea>
+                        </div>
+
+
+                        <div class="form-row-3">
+
+                            <div class="form-group">
+                                <label>
+                                    State <span class="required">*</span>
+                                </label>
+
+                                <select name="State" required>
+                                   <option value="">Select State</option>
+<option value="Andhra Pradesh">Andhra Pradesh</option>
+<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+<option value="Assam">Assam</option>
+<option value="Bihar">Bihar</option>
+<option value="Chhattisgarh">Chhattisgarh</option>
+<option value="Goa">Goa</option>
+<option value="Gujarat">Gujarat</option>
+<option value="Haryana">Haryana</option>
+<option value="Himachal Pradesh">Himachal Pradesh</option>
+<option value="Jharkhand">Jharkhand</option>
+<option value="Karnataka">Karnataka</option>
+<option value="Kerala">Kerala</option>
+<option value="Madhya Pradesh">Madhya Pradesh</option>
+<option value="Maharashtra">Maharashtra</option>
+<option value="Manipur">Manipur</option>
+<option value="Meghalaya">Meghalaya</option>
+<option value="Mizoram">Mizoram</option>
+<option value="Nagaland">Nagaland</option>
+<option value="Odisha">Odisha</option>
+<option value="Punjab">Punjab</option>
+<option value="Rajasthan">Rajasthan</option>
+<option value="Sikkim">Sikkim</option>
+<option value="Tamil Nadu">Tamil Nadu</option>
+<option value="Telangana">Telangana</option>
+<option value="Tripura">Tripura</option>
+<option value="Uttar Pradesh">Uttar Pradesh</option>
+<option value="Uttarakhand">Uttarakhand</option>
+<option value="West Bengal">West Bengal</option>
+<option value="Other">Other</option>
+                                </select>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>
+                                    City <span class="required">*</span>
+                                </label>
+
+                                <input 
+                                    type="text"
+                                    name="City"
+                                    placeholder="Enter city"
+                                    required>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>
+                                    Pin Code
+                                </label>
+
+                                <input 
+                                    type="text"
+                                    name="Pin Code"
+                                    placeholder="Pin Code"
+                                    required>
+                            </div>
+
+                        </div>
+
+                    </div>
+			<!-- Submit Button Container -->
+                <div class="submit-container">
+                    <button type="submit" class="btn-submit">
+                        <span>Submit</span>
+                        <span>✈</span>
+                    </button>
+                </div>
+
+            </div>
+        </form>
+        </section>
+       
+
+    <!-- 4. TRANSPORT SECTION -->
+    <section id="transport" class="py-20 bg-green-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-agroGreen">Transport Services</h2>
+                <p class="text-gray-600 mt-2">Safe and fast logistics solutions for safe delivery.</p>
+                <div class="w-24 h-1 bg-agroYellow mx-auto mt-3"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold text-agroGreen mb-4">Fast & Reliable Fleet Delivery</h3>
+                    <p class="text-gray-700 mb-4">We provide specialized agricultural transportation services to ensure your crops and products reach the market without delay or quality loss.</p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><i class="fa-solid fa-check text-agroYellow mr-2"></i> GPS Enabled Trucks</li>
+                        <li><i class="fa-solid fa-check text-agroYellow mr-2"></i> Pan-India Transport Network</li>
+                        <li><i class="fa-solid fa-check text-agroYellow mr-2"></i> Affordable Freight Charges</li>
+                    </ul>
+                </div>
+                <div class="bg-agroGreen p-8 rounded-2xl text-white shadow-xl text-center">
+                    <i class="fa-solid fa-truck-fast text-6xl text-agroYellow mb-4"></i>
+                    <h4 class="text-2xl font-bold mb-2">Need a Transport?</h4>
+                    <p class="mb-6">Book logistics easily through our booking form below.</p>
+                    <a href="TRANSPORT.HTML" class="bg-agroYellow text-agroGreen font-bold px-6 py-2 rounded-lg hover:bg-white transition">Book Transport</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Form & WhatsApp Integration -->
+     <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div>
+                    <span class="text-amber-600 font-bold uppercase tracking-wider text-sm">Get In Touch</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4">Request to send a sample</h2>
+                    <p class="text-slate-600 mb-8">Fill out the form below. Your message will be sent directly to our WhatsApp number so our experts can assist you immediately!</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                            <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-500 block">Call Us Anytime</span>
+                                <a href="tel:8058073995" class="text-lg font-bold text-slate-900 hover:text-amber-600">+91 7300083578 <br> +91 9216359720</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center text-xl font-bold">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-500 block">WhatsApp Business</span>
+                                <a href="https://chat.whatsapp.com/KokQmPyDpgN8ThYcGsjL6T?s=cl&p=a&ilr=1" target="_blank" class="text-lg font-bold text-slate-900 hover:text-green-600">+91 730-008-3578</a>
+                            </div>
+                        </div>
+                         <div class="flex items-center gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                            <div class="w-12 h-12 bg-white-100 text-blue-600 rounded-xl flex items-center justify-center text-xl font-bold">
+                                <i class="fa-brands fa-facebook"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-500 block">facebook</span>
+                                <a href="https://www.facebook.com/share/184eXkEL2X/" target="_blank" class="text-lg font-bold text-slate-900 hover:text-blue-600">NHC Agro Trader</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                            <div class="w-12 h-12 bg-pink-100 text-pink-600 rounded-xl flex items-center justify-center text-xl font-bold">
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-500 block">Instagram</span>
+                                <a href="https://www.instagram.com/nhc_trading_co/" target="_blank" class="text-lg font-bold text-slate-900 hover:text-pink-600">nhc_trading_co</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                            <div class="w-12 h-12 bg-white-100 text-red-600 rounded-xl flex items-center justify-center text-xl font-bold">
+                                <i class="fa-brands fa-youtube "></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-500 block">YouTube </span>
+                                <a href="https://youtube.com/@nhcagrotrader?si=pj49D0xdb59JjsNt" target="_blank" class="text-lg font-bold text-slate-900 hover:text-green-600">nhcagrotrader</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+<!-- ============================= -->
+<!-- WHATSAPP ORDER FORM -->
+<!-- ============================= -->
+
+<div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-xl">
+
+    <h3 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+        <i class="fa-brands fa-whatsapp text-green-600"></i>
+        Send Direct WhatsApp Request
+    </h3>
+
+    <form id="whatsappForm" onsubmit="sendToWhatsApp(event)" class="space-y-4">
+
+        <!-- Contact No / Mail -->
+        <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-1">
+                Contact No. / Mail ID
+            </label>
+
+            <input
+                type="text"
+                id="contactInfo"
+                required
+                placeholder="Enter contact number or mail ID"
+                class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:border-amber-500">
+        </div>
+
+
+        <!-- Name / Frame Name -->
+        <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-1">
+                Name / Frame Name
+            </label>
+
+            <input
+                type="text"
+                id="frameName"
+                required
+                placeholder="Enter name / frame name"
+                class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:border-amber-500">
+        </div>
+
+
+        <!-- Address -->
+        <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-1">
+                Address &amp; Pincode
+            </label>
+
+            <textarea
+                id="address"
+                rows="4"
+                required
+                placeholder="Type here"
+                class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:border-amber-500"></textarea>
+        </div>
+
+
+        <!-- Payment Method -->
+        <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-1">
+                Prepaid / COD
+            </label>
+
+            <select
+                id="paymentMethod"
+                required
+                class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:border-amber-500">
+
+                <option value="">Select Payment Method</option>
+                <option value="Prepaid">Prepaid</option>
+                <option value="COD">COD</option>
+
+            </select>
+        </div>
+
+
+        <!-- Submit -->
+        <button
+            type="submit"
+            class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-lg">
+
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+            Send Request via WhatsApp
+
+        </button>
+
+    </form>
+</div>
+
+
+<!-- ============================= -->
+<!-- PREPAID QR PAYMENT POPUP -->
+<!-- ============================= -->
+
+<div
+    id="qrPaymentModal"
+    class="hidden fixed inset-0 z-[9999] bg-black/70 flex items-center justify-center p-4">
+
+    <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full p-6 text-center relative">
+
+        <!-- Close -->
+        <button
+            type="button"
+            onclick="closeQR()"
+            class="absolute top-3 right-4 text-2xl text-gray-500 hover:text-red-500">
+            &times;
+        </button>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-2">
+            Prepaid Payment
+        </h3>
+
+        <p class="text-gray-600 text-sm mb-5">
+            Please scan the QR code below to complete your payment.
+        </p>
+
+
+        <!-- YOUR QR IMAGE -->
+        <img
+            src="your-qr-image.jpeg"
+            alt="Payment QR Code"
+            class="w-64 h-64 object-contain mx-auto border rounded-2xl p-2 bg-white">
+
+
+        <p class="text-sm font-semibold text-slate-700 mt-4">
+            Scan &amp; Pay using UPI
+        </p>
+
+
+        <!-- Continue -->
+        <button
+            type="button"
+            onclick="continueToWhatsApp()"
+            class="mt-5 w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl transition">
+
+            <i class="fa-brands fa-whatsapp mr-2"></i>
+            I've Completed Payment / Continue to WhatsApp
+
+        </button>
+
+
+        <button
+            type="button"
+            onclick="closeQR()"
+            class="mt-3 text-sm text-gray-500 hover:text-gray-800">
+
+            Cancel
+
+        </button>
+
+    </div>
+</div>
+
+
+<!-- ============================= -->
+<!-- JAVASCRIPT -->
+<!-- ============================= -->
+
+<script>
+
+    /* =====================================
+       YOUR WHATSAPP NUMBER
+       =====================================
+
+       ENTER YOUR NUMBER HERE.
+
+       India example:
+       918302033517
+
+       DO NOT USE:
+       +91 83020 33517
+
+       USE:
+       918302033517
+    */
+
+    const whatsappNumber = "+917300083578";
+
+
+    /* =====================================
+       FORM SUBMIT
+       ===================================== */
+
+    function sendToWhatsApp(event) {
+
+        event.preventDefault();
+
+        const contactInfo =
+            document.getElementById("contactInfo").value.trim();
+
+        const frameName =
+            document.getElementById("frameName").value.trim();
+
+        const address =
+            document.getElementById("address").value.trim();
+
+        const paymentMethod =
+            document.getElementById("paymentMethod").value;
+
+
+        /* Check payment selection */
+
+        if (paymentMethod === "") {
+
+            alert("Please select Prepaid or COD.");
+
+            return;
+        }
+
+
+        /* =================================
+           IF PREPAID
+           SHOW QR FIRST
+           ================================= */
+
+        if (paymentMethod === "Prepaid") {
+
+            document.getElementById("qrPaymentModal")
+                .classList.remove("hidden");
+
+            return;
+        }
+
+
+        /* =================================
+           IF COD
+           DIRECTLY OPEN WHATSAPP
+           ================================= */
+
+        openWhatsApp(
+            contactInfo,
+            frameName,
+            address,
+            paymentMethod
+        );
+    }
+
+
+    /* =====================================
+       CONTINUE AFTER QR PAYMENT
+       ===================================== */
+
+    function continueToWhatsApp() {
+
+        const contactInfo =
+            document.getElementById("contactInfo").value.trim();
+
+        const frameName =
+            document.getElementById("frameName").value.trim();
+
+        const address =
+            document.getElementById("address").value.trim();
+
+        const paymentMethod =
+            document.getElementById("paymentMethod").value;
+
+
+        closeQR();
+
+
+        openWhatsApp(
+            contactInfo,
+            frameName,
+            address,
+            paymentMethod
+        );
+    }
+
+
+    /* =====================================
+       OPEN WHATSAPP
+       ===================================== */
+
+    function openWhatsApp(
+        contactInfo,
+        frameName,
+        address,
+        paymentMethod
+    ) {
+
+        const message =
+`Hello NHC AGRO,
+
+I want to place an order/request.
+
+Contact No. / Mail ID:
+${contactInfo}
+
+Name / Frame Name:
+${frameName}
+
+Address & Pincode:
+${address}
+
+Payment Method:
+${paymentMethod}
+
+Please confirm my request.`;
+
+        
+        const whatsappURL =
+            "https://wa.me/"+917300083578
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(message);
+
+
+        /* Open WhatsApp */
+
+        window.open(whatsappURL, "_blank");
+    }
+
+
+    /* =====================================
+       CLOSE QR
+       ===================================== */
+
+    function closeQR() {
+
+        document.getElementById("qrPaymentModal")
+            .classList.add("hidden");
+    }
+
+
+    /* =====================================
+       PAYMENT DROPDOWN CHANGE
+       ===================================== */
+
+    document.getElementById("paymentMethod")
+        .addEventListener("change", function () {
+
+            /*
+             Optional:
+             You can add anything here later
+             if you want payment information
+             to appear when Prepaid is selected.
+            */
+
+        });
+
+</script>
+
+     <!-- ============================= -->
+<!-- COMPLAINT SECTION -->
+<!-- ============================= -->
+
+<section id="complaint" class="py-20 bg-slate-100">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 bg-white p-8 rounded-2xl shadow-xl" data-aos="fade-up">
+
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-agroGreen">Register a Complaint</h2>
+            <p class="text-gray-600 mt-1">We value your feedback and resolve issues quickly.</p>
+            <div class="w-16 h-1 bg-agroYellow mx-auto mt-2"></div>
+        </div>
+
+        <form action="https://formspree.io/f/mbgrajdn" method="POST" class="space-y-4">
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">
+                    Your Name
+                </label>
+                <input 
+                    type="text" 
+                    name="name"
+                    required 
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-agroGreen"
+                    placeholder="Enter your name">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">
+                    Phone Number
+                </label>
+                <input 
+                    type="tel" 
+                    name="phone"
+                    required 
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-agroGreen"
+                    placeholder="Enter your phone number">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">
+                    Complaint / Issue Details
+                </label>
+                <textarea 
+                    rows="4" 
+                    name="complaint"
+                    required 
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-agroGreen"
+                    placeholder="Describe your complaint or issue"></textarea>
+            </div>
+
+            <button 
+                type="submit" 
+                class="w-full bg-agroGreen text-white font-bold py-3 rounded-lg hover:bg-agroLightGreen transition">
+                Submit Complaint
+            </button>
+
+        </form>
+    </div>
+</section>
+
+
+
+<!-- ============================= -->
+<!-- FOOTER -->
+<!-- ============================= -->
+
+<footer class="w-full bg-agroGreen text-white">
+	<div class="w-full py-12 px-4">
+	
+
+        <!-- COMPANY NAME -->
+        <div class="text-center mb-8">
+
+            <h3 class="text-agroYellow font-bold text-2xl mb-2">
+                NHC AGRO
+            </h3>
+
+            <p class="text-sm text-gray-200">
+                &copy; 2025-26 NHC Agro. All Rights Reserved.
+            </p>
+
+        </div>
+
+
+        <!-- QUICK CONTACT -->
+        <div class="flex flex-col items-center">
+
+            <h4 class="text-white font-bold text-xl mb-6
+                       border-b-2 border-agroYellow pb-2">
+                Quick Contact
+            </h4>
+
+
+            <!-- VERTICAL CONTACT LIST -->
+            <div class="flex flex-col items-center gap-5">
+
+
+                <!-- WHATSAPP -->
+                <a
+                    href="https://wa.me/917300083578"
+                    target="_blank"
+                    class="flex items-center justify-center
+                           text-white font-semibold
+                           hover:text-agroYellow transition">
+
+                    <i class="fa-brands fa-whatsapp
+                              text-green-400 text-lg w-7 text-center mr-3"></i>
+
+                    <span>
+                        +91 7300083578
+                    </span>
+
+                </a>
+
+
+                <!-- EMAIL -->
+                <a
+                    href="mailto:nhcagrocommodity@gmail.com"
+                    class="flex items-center justify-center
+                           text-white font-semibold
+                           hover:text-agroYellow transition">
+
+                    <i class="fa-solid fa-envelope
+                              text-blue-400 text-lg w-7 text-center mr-3"></i>
+
+                    <span>
+                        nhcagrocommodity@gmail.com
+                    </span>
+
+                </a>
+
+
+                <!-- INSTAGRAM -->
+                <a
+                    href="https://www.instagram.com/nhc_trading_co/"
+                    target="_blank"
+                    class="flex items-center justify-center
+                           text-white font-semibold
+                           hover:text-agroYellow transition">
+
+                    <i class="fa-brands fa-instagram
+                              text-pink-500 text-lg w-7 text-center mr-3"></i>
+
+                    <span>
+                        nhc_trading_co
+                    </span>
+
+                </a>
+
+
+                <!-- LINKEDIN -->
+                <a
+                    href="https://www.linkedin.com/in/natural-health-care-nhc-1b217536b/"
+                    target="_blank"
+                    class="flex items-center justify-center
+                           text-white font-semibold
+                           hover:text-agroYellow transition">
+
+                    <i class="fa-brands fa-linkedin
+                              text-blue-500 text-lg w-7 text-center mr-3"></i>
+
+                    <span>
+                        natural-health-care-nhc
+                    </span>
+
+                </a>
+
+
+                <!-- FACEBOOK -->
+                <a
+                    href="https://www.facebook.com/share/184eXkEL2X/"
+                    target="_blank"
+                    class="flex items-center justify-center
+                           text-white font-semibold
+                           hover:text-agroYellow transition">
+
+                    <i class="fa-brands fa-facebook
+                              text-blue-400 text-lg w-7 text-center mr-3"></i>
+
+                    <span>
+                        NHC Agro Trader
+                    </span>
+
+                </a>
+
+
+                <!-- YOUTUBE -->
+                <a
+                    href="https://youtube.com/@nhcagrotrader"
+                    target="_blank"
+                    class="flex items-center justify-center
+                           text-white font-semibold
+                           hover:text-agroYellow transition">
+
+                    <i class="fa-brands fa-youtube
+                              text-red-500 text-lg w-7 text-center mr-3"></i>
+
+                    <span>
+                        nhcagrotrader
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+	 <!--=====================================
+       WhatsApp & moblie icon
+       =====================================--!>
+	<Style>
+	.floating-actions {
+            position: fixed;
+
+            right: 18px;
+            bottom: 18px;
+
+            z-index: 900;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 10px;
+        }
+
+        .floating-action {
+            width: 54px;
+            height: 54px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 50%;
+
+            color: blue;
+
+            font-size: 22px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0,0,0,.2);
+
+            transition: .3s;
+        }
+
+        .floating-action:hover {
+            transform:
+                scale(1.1);
+        }
+
+        .whatsapp {
+            background: #19a95b;
+			color:white;
+        }
+
+        .call {
+            background: var(--blue-light);
+        }
+		</style>
+		
+	<div class="floating-actions">
+
+
+    <a class="floating-action whatsapp" href="https://wa.me/917300083578" target="_blank">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+    </a>
+
+
+    <a class="floating-action call" href="tel:+917300083578">
+
+        <i class="fa-solid fa-phone"></i>
+
+    </a>
+
+</div>
+
+    <!-- JavaScript for Slideshow & Animations -->
+	
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Slideshow Logic
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                }
+            });
+            currentSlide = (currentSlide + 1) % slides.length;
+        }
+
+        // Change slide every 4 seconds
+        setInterval(showSlide, 4000);
+
+        const sameAddressCheckbox = document.getElementById('sameAddress');
+        const shippingSection = document.getElementById('shippingSection');
+
+        sameAddressCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                shippingSection.style.display = 'none';
+            } else {
+                shippingSection.style.display = 'block';
+            }
+        });
+        
+    </script>
+</body>
+</html>
